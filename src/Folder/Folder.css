@@ -1,0 +1,20 @@
+.nameLink {
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid black;
+    color: black;
+    text-decoration: none;
+}
+
+.active {
+    color: red;
+    font-weight: 700;
+}
+
+.folderList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0px 10px 0px;
+}

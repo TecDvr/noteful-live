@@ -1,0 +1,13 @@
+.addContainer {
+    width: 90vw;
+    height: 70vh;
+    background-color: burlywood;
+    margin: 20px auto 20px auto;
+}
+
+.addForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
