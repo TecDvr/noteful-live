@@ -5,7 +5,7 @@ import './Note.css';
 // import PropTypes from 'prop-types';
 
 function deleteNoteRequest(noteId, callback) {
-    fetch('https://mighty-plains-06544.herokuapp.com/api/note' + `/${noteId}`, {
+    fetch('http://localhost:8000/api/note' + `/${noteId}`, {
         method: 'DELETE'
       })
         .then(res => {
@@ -33,7 +33,7 @@ class Note extends React.Component {
                 return (
                     <div key={`note-${index}`}>
                         <NavLink to={`/note/${note.id}`}>{note.name}</NavLink>
-                        <p>Last modified: {note.modified.slice(0,10)}</p>
+                        <p>Last modified: {note.modified}</p>
                         <Route path='/note' render={() => <p>{note.content}</p>}/>
                         <button 
                             onClick={() => {

@@ -15,7 +15,7 @@ export default class AddFolder extends React.Component {
       event.preventDefault();
       const newFolder = this.state.folderName;
       console.log(newFolder);
-      fetch('https://mighty-plains-06544.herokuapp.com/api/folder', {
+      fetch('http://localhost:8000/api/folder', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

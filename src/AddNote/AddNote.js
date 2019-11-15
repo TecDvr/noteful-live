@@ -23,7 +23,7 @@ export default class AddNote extends React.Component {
                 error: true
             })
         } else {
-            fetch('https://mighty-plains-06544.herokuapp.com/api/note', {
+            fetch('http://localhost:8000/api/note', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
