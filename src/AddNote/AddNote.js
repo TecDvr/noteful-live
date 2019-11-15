@@ -37,14 +37,7 @@ export default class AddNote extends React.Component {
               })
                 .then(response => response.json())
                 .then(responseJSON => {
-                  console.log(responseJSON)
-                  this.setState({
-                      noteName: '',
-                      noteBody: '',
-                      noteFolder: ''
-                    }, () => {
-                      this.context.addNote(responseJSON);
-                    })
+                    this.context.addNote(responseJSON);
                     this.props.history.push('/')
                 })
         }

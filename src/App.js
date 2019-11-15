@@ -7,7 +7,7 @@ import FolderPage from './FolderPage/FolderPage';
 import Note from './Note/Note';
 import NotefulContext from './NotefulContext';
 import AddNote from './AddNote/AddNote';
-import NoteError from './NoteError';
+// import NoteError from './NoteError';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -72,25 +72,25 @@ export default class App extends React.Component {
           <Route path="/" component={Folder}/>
 
           <section>
-            <NoteError>
+    
               <Route 
                 exact
                 path='/folder/:id'
                 component={FolderPage} />
-            </NoteError>
+
           </section>
 
           <section>
-            <NoteError>
+  
               <Route
                 exact
                 path='/newnote'
                 component={AddNote} />
-            </NoteError>
+    
           </section>
 
           <main>
-            <NoteError>
+
               <Route 
                 exact
                 path='/' 
@@ -99,7 +99,7 @@ export default class App extends React.Component {
                 exact
                 path='/note/:id'
                 render={(rprops)=><Note id={rprops.match.params.id}/>}/>  
-            </NoteError>
+       
           </main>
 
         </div>
