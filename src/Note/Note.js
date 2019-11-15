@@ -1,10 +1,11 @@
 import React from 'react';
 import NotefulContext from '../NotefulContext';
 import { Route, NavLink, withRouter } from 'react-router-dom';
+import './Note.css';
 // import PropTypes from 'prop-types';
 
 function deleteNoteRequest(noteId, callback) {
-    fetch('http://localhost:8000/api/note' + `/${noteId}`, {
+    fetch('https://mighty-plains-06544.herokuapp.com/api/note' + `/${noteId}`, {
         method: 'DELETE'
       })
         .then(res => {
@@ -32,7 +33,7 @@ class Note extends React.Component {
                 return (
                     <div key={`note-${index}`}>
                         <NavLink to={`/note/${note.id}`}>{note.name}</NavLink>
-                        <p>Last modified: {note.modified}</p>
+                        <p>Last modified: {note.modified.slice(0,10)}</p>
                         <Route path='/note' render={() => <p>{note.content}</p>}/>
                         <button 
                             onClick={() => {

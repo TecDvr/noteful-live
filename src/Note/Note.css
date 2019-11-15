@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+
+.note {
+    background-color: bisque;
+    margin: 10px 40px 10px 40px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+}
+
+.note:hover {
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+}
+
+a:hover {
+    transform: scale(1.05);
+}
+
+p {
+    font-family: 'Nanum Myeongjo', serif
+}
+
