@@ -5,7 +5,7 @@ import './Note.css';
 // import PropTypes from 'prop-types';//
 
 function deleteNoteRequest(noteId, callback) {
-    fetch('http://localhost:8000/api/note' + `/${noteId}`, {
+    fetch('https://mighty-plains-06544.herokuapp.com/api/note' + `/${noteId}`, {
         method: 'DELETE'
       })
         .then(res => {
