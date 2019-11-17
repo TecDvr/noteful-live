@@ -7,7 +7,7 @@ import './Note.css';
 
 function deleteNoteRequest(noteId, callback) {
     // eslint-disable-next-line
-    fetch('http://localhost:8000/api/note' + `/${noteId}`, {
+    fetch('https://mighty-plains-06544.herokuapp.com/api/note' + `/${noteId}`, {
         method: 'DELETE'
       })
         .then(res => {

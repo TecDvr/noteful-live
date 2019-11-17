@@ -39,8 +39,8 @@ export default class App extends React.Component {
 
   componentDidMount() {
     Promise.all([
-        fetch('http://localhost:8000/api/folder'),
-        fetch('http://localhost:8000/api/note')
+        fetch('https://mighty-plains-06544.herokuapp.com/api/folder'),
+        fetch('https://mighty-plains-06544.herokuapp.com/api/note')
     ])
         .then(([foldersData, notesData]) => {
             return Promise.all([foldersData.json(), notesData.json()])

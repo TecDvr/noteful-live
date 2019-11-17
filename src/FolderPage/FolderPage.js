@@ -23,7 +23,7 @@ export default class FolderPage extends React.Component {
                         <button
                             onClick={() => {
                                 // eslint-disable-next-line
-                                fetch('http://localhost:8000/api/note' + `/${note.id}`, {
+                                fetch('https://mighty-plains-06544.herokuapp.com/api/note' + `/${note.id}`, {
                                     method: 'DELETE'
                                 })
                                 .then(res => {
