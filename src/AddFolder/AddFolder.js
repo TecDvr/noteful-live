@@ -5,7 +5,8 @@ export default class AddFolder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      folderName: ''
+      folderName: '',
+      error: false
     }
   }
 
@@ -14,8 +15,10 @@ export default class AddFolder extends React.Component {
     handleSubmit(event) {
       event.preventDefault();
       const newFolder = this.state.folderName;
-      console.log(newFolder);
-      fetch('https://mighty-plains-06544.herokuapp.com/api/folder', {
+      if (this.state.folderName === '') {
+        this.setState({error: true})
+      } else {
+        fetch('http://localhost:8000/api/folder', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -24,14 +27,17 @@ export default class AddFolder extends React.Component {
       })
         .then(response => response.json())
         .then(responseJSON => {
-          console.log(responseJSON)
           this.setState({folderName: ''})
-          this.context.addFolder(responseJSON);
+          this.context.addFolder(responseJSON[0]);
         })
+        this.setState({error: false})
+      }
+      
     }
 
     render() {
         return (
+          <div>
             <form onSubmit={e => this.handleSubmit(e)}>
                 <label htmlFor='folderName'></label>
                 <input 
@@ -44,6 +50,10 @@ export default class AddFolder extends React.Component {
                 />
                 <button>Add Folder</button>
             </form>
+            {this.state.error === true 
+              ? <p>Please enter a folder name</p>
+              : null}
+          </div>
         )
     }
 }

@@ -3,9 +3,11 @@ import NotefulContext from '../NotefulContext';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import './Note.css';
 // import PropTypes from 'prop-types';//
+//https://mighty-plains-06544.herokuapp.com
 
 function deleteNoteRequest(noteId, callback) {
-    fetch('https://mighty-plains-06544.herokuapp.com/api/note' + `/${noteId}`, {
+    // eslint-disable-next-line
+    fetch('http://localhost:8000/api/note' + `/${noteId}`, {
         method: 'DELETE'
       })
         .then(res => {
@@ -29,7 +31,9 @@ class Note extends React.Component {
     render() {
         return (
             <div className="note">
-                {this.context.notes.filter(note=>note.id == this.props.id).map((note,index) => {
+                {this.context.notes.filter(note=>
+                // eslint-disable-next-line
+                note.id == this.props.id).map((note,index) => {
                 return (
                     <div key={`note-${index}`}>
                         <NavLink to={`/note/${note.id}`}>{note.name}</NavLink>
@@ -39,7 +43,7 @@ class Note extends React.Component {
                             onClick={() => {
                                 deleteNoteRequest(
                                     this.props.id,
-                                    this.context.deleteNote,
+                                    this.context.deleteNote(note.id),
                                 )
                                 this.props.history.push('/')
                             }}

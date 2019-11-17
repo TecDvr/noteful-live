@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 export default class NoteList extends React.Component {
     static contextType = NotefulContext;
+
     render() {
         return (
                     <div>
